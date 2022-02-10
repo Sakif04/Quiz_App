@@ -1,7 +1,8 @@
 export default function Category(){
 
-    return(<>
-    <label for="trivia_category" >Select Category: </label>
+    return(
+<>
+    <label htmlFor="trivia_category" >Select Category: </label>
     <select name="trivia_category" className="form-control">
         <option value="any">Any Category</option>
         <option value="9">General Knowledge</option>
@@ -28,7 +29,8 @@ export default function Category(){
         <option value="30">Science: Gadgets</option>
         <option value="31">Entertainment: Japanese Anime &amp;Manga</option>
         <option value="32">Entertainment: Cartoon &amp; Animations</option>		
-    </select></>
+    </select>
+</>
     
-    )
+)
 }
