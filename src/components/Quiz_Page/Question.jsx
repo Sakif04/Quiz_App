@@ -1,4 +1,5 @@
-import { Row } from "react-bootstrap"
+import { Row } from "react-bootstrap";
+
 
 export default function Question(){
     return(

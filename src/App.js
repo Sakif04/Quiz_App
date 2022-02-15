@@ -2,7 +2,7 @@ import React from 'react';
 import Main from './components/Quiz_Page/Main';
 import Header  from './components/Header';
 import StartPage from './components/Starting_page/StartPage';
-import { Navbar,Nav } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import './styles/App.css';
 import {Switch,BrowserRouter as Router,Route,Link} from 'react-router-dom';
 function App() {
@@ -24,7 +24,7 @@ function App() {
           <StartPage/>
         </Route>
 
-        <Route path='/q'> 
+        <Route exact path='/q'> 
           <Main />
         </Route>
 

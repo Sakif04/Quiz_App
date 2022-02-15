@@ -49,3 +49,8 @@ a:hover{
     transform: translateY(0px);
   }
 }
+/* @media (max-width:700px){
+  html{
+    font-size: 9px;
+  }
+} */

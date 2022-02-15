@@ -6,8 +6,8 @@ export default function SelectField({label,options}){
     return(
 <>
     <label htmlFor={label}>{label}</label>
-    <select name="" id="" className="form-control" value={select} onChange={changeSelect}>       
-    {options.map((option,key)=><option key={key} value={option}>{option}</option>)}
+    <select name="" id="" className="form-control" onChange={changeSelect}>       
+    {options.map((option,key)=><option key={key} value={option.id}>{option.name}</option>)}
     </select>
 </>
 )
