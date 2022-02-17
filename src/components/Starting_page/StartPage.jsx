@@ -2,6 +2,7 @@ import {Container,Button} from "react-bootstrap";
 import TriviaType from "./TriviaType";
 import SelectField from "./SelectField";
 import Category from "./Category";
+import {changeAmount} from "../../features/settings/reducer"
 // import DifficultySelect from "./DifficultySelect";
 import { useState } from "react";
 
@@ -26,9 +27,8 @@ export default function StartPage(){
        <Container className="col-sm-10 bg-secondary purple"> 
             <h2 className="form-signin-heading text-center orange bg-secondary">Quiz APP </h2>
             <label htmlFor="trivia_amount orange" >Number of Questions:</label>
-            <input type="number" name="trivia_amount" id="trivia_amount" className="form-control text-center" min="1" max="20" value={questionNumber} onChange={(e)=>setQuestionNumber(e.target.name)} />
+            <input type="number" name="trivia_amount" id="trivia_amount" className="form-control text-center" min="1" max="20" value={questionNumber} onChange={(e)=>setQuestionNumber(e.target.value)} />
             <br/>
-
             <Category />
     
             <br />
@@ -41,7 +41,6 @@ export default function StartPage(){
             
             <br />
            
-
             <Button className="btn-lg btn-primary my-3 " type="submit">
                 Start Quiz
             </Button>

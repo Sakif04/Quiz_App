@@ -1,14 +1,13 @@
+import SelectField from "./SelectField";
 export default function TriviaType(){
+    const type_options=[
+        { id: "multiple", name: "Multiple Choise" },
+        { id: "boolean", name: "True/False" },
+      ];
     
     return(
-    <>
-    <label htmlFor="trivia_type">Select Type: </label>
-    <select name="trivia_type" className="form-control">&gt;
-        <option value="any">Any Type</option>
-        <option value="multiple">Multiple Choice</option>
-        <option value="boolean">True / False</option>
-    </select>
-    </>
+    
+    <SelectField label="Select Type" options={type_options}></SelectField>
 
     )
 }

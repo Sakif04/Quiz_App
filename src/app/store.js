@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import settingReducer from '../features/settings/actions';
+import settingReducer from '../features/settings/reducer';
 
 export const store = configureStore({
   reducer: {
-    settingReducer  
+   setting: settingReducer  
   },
 });
+ 

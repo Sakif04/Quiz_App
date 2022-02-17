@@ -1,5 +1,6 @@
  import { createSlice } from "@reduxjs/toolkit";
 
+
 // const CHANGE_CATEGORY='CHANGE_CATEGORY',
 // CHANGE_DIFFICULTY='CHANGE_DIFFICULTY',
 // CHANGE_AMOUNT='CHANGE_AMOUNT',
@@ -10,18 +11,17 @@
 
 const settingSlicer=createSlice(
     
-    {   name:'Settings',
-        initialState: {
-        category: "",
-        difficulty: "",
-        type: "",
-        questionAmount: 10,
-        score: 0,
-      }
-      ,
+    {   
+      name:'Settings',
+      initialState: {
+      category: "",
+      difficulty: "",
+      type: "",
+      questionAmount: 10,
+      score: 0,
+      },
       reducers:{
-        selectCategory:(state,action)=>
-        {
+        selectCategory:(state,action)=>{
           state.category=action.payload;
         },
         selectDifficulty:(state,action)=>{
@@ -30,12 +30,14 @@ const settingSlicer=createSlice(
         selectType:(state,action)=>{
           state.type=action.payload;
         },
-        changeScore:(state,action)=>{
-          state.score=action.payload;
-        }
-
-      }
-    }
+        changeAmount:(state,action)=>{
+          state.questionAmount=action.payload
+        },
+        updateScore:(state,action)=>{
+          state.score+=action.payload;
+        }}
+      } 
+      
 )
 
 export const {selectCategory,selectDifficulty,selectType,changeScore} =settingSlicer.actions;

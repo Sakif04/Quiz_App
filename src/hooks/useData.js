@@ -12,7 +12,6 @@ export default function UseData({url}){
         .then((res=>res.json()))
         .then((res)=>{
             setResponse(res);
-            console.log(res);
         }
             )
         .catch((e)=>setErr(e))
