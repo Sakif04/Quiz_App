@@ -1,5 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+ 
+## Preview Link [Quiz App](https://github.com/Sakif04/Sakif04)
+## Features
+- Used react-bootstrap as dependancy
+- Used React-redux and redux toolkit to manage state
+- Fetched API from [Open Trivia Database](https://opentdb.com/)     ![](https://opentdb.com/images/logo-banner.png)
+- 
+
+<h3 align="center">Best-README-Template</h3>
+
 ## Available Scripts
 
 In the project directory, you can run:
