@@ -1,6 +1,6 @@
-import Options from "./Options"
-import Question from "./Question";
-import Nav from "./Nav";
+import Options from "./page_components/Options"
+import Question from "./page_components/Question";
+import Nav from "./page_components/Nav";
 import { Container} from 'react-bootstrap';
 import { useSelector } from "react-redux";
 export default function Main(){   

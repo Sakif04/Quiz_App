@@ -4,7 +4,7 @@ import Header  from './components/Header';
 import StartPage from './components/Starting_page/StartPage';
 import { Navbar } from 'react-bootstrap';
 import './styles/App.css';
-import {Switch,BrowserRouter as Router,Route,Link} from 'react-router-dom';
+import {Routes,BrowserRouter as Router,Route,Link} from 'react-router-dom';
 function App() {
   return (
   <div className="App">
@@ -18,17 +18,13 @@ function App() {
 
     </Navbar>
     <Header/>    
-      <Switch>
+      <Routes>
 
-        <Route exact path="/">
-          <StartPage/>
-        </Route>
-
-        <Route exact path='/q'> 
-          <Main />
-        </Route>
-
-      </Switch>
+        <Route  path="/" element={  <StartPage/>}/>
+        
+        <Route  path='/q' element={<Main />} /> 
+        
+      </Routes>
     </Router>
   </div>
   );

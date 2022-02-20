@@ -1,4 +1,4 @@
-import {selectCategory,selectDifficulty,selectType} from "../../features/settings/reducer";
+import {selectCategory,selectDifficulty,selectType} from "../../../features/settings/reducer";
 import { useState } from "react";
 import { useSelector,useDispatch} from "react-redux";
 
@@ -9,7 +9,6 @@ export default function SelectField({label,options}){
     console.log(state);
     
     
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [selected,setSelect]=useState(options[0]);
     const changeSelect=(e)=>
     {
