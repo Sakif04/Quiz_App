@@ -7,18 +7,11 @@ const optionStyle={
 }
     return(<>
          <Container>
-          {/* { options.map((option,id)=> <Row >
-               <Button style={optionStyle}>{option}Hashem Abul kamal tamal</Button>
-            </Row>)} */}
-            <Row>
-               <Button style={optionStyle}>Hashem Abul kamal tamal</Button>
-            </Row>
-            <Row>
-            <Button style={optionStyle}>Hashem Abul kamal tamal</Button>
-            </Row>
-            <Row>
-            <Button style={optionStyle}>Hashem Abul kamal tamal</Button>
-            </Row>
+          {  (options)?
+           options.map((option,id)=> <Row key={id+1} >
+               <Button  style={optionStyle}>{option}</Button>
+            </Row>):""}
+            
          </Container>
       </>
     )

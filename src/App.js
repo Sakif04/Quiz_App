@@ -22,7 +22,7 @@ function App() {
 
         <Route  path="/" element={  <StartPage/>}/>
         
-        <Route  path='/q' element={<Main />} /> 
+        <Route  path='/q:id' element={<Main />} /> 
         
       </Routes>
     </Router>

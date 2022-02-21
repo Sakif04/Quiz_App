@@ -35,10 +35,13 @@ const settingSlicer=createSlice(
       },
       updateScore:(state,action)=>{
         state.score+=action.payload;
+      },
+      getQuestions:(state,action)=>{
+        state.questions=action.payload;
       }
     }
   }   
 )
 
-export const {selectCategory,selectDifficulty,selectType,changeScore,changeAmount} =settingSlicer.actions;
+export const {selectCategory,selectDifficulty,selectType,changeScore,changeAmount,getQuestions} =settingSlicer.actions;
 export default settingSlicer.reducer;

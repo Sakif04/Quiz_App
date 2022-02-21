@@ -3,13 +3,17 @@ import TriviaType from "./page_components/TriviaType";
 import SelectField from "./page_components/SelectField";
 import Category from "./page_components/Category";
 import {changeAmount} from "../../features/settings/reducer"
-import { useSelector,useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 
 export default function StartPage(){
+    const navigate=useNavigate();
     const dispatch=useDispatch();
-    const difficulty=[
+   
+   
+    const difficultyOptions=[
         {id:'',name:'Any'},
         {id:'easy',name:'Easy'},
         {id:'medium',name:'Medium'},
@@ -17,12 +21,10 @@ export default function StartPage(){
         
     const [questionNumber,setQuestionNumber]=useState(10);
     const handleSubmit=(e)=>{
-        e.preventDefault();
-
+        navigate("/q1")
     }
     const handleInput=(e)=>{
         let target=e.target.value;
-
         setQuestionNumber(target);
         dispatch(changeAmount(target)); 
     }
@@ -38,7 +40,7 @@ export default function StartPage(){
     
             <br />
 
-            <SelectField label='Difficulty' options={difficulty}  />
+            <SelectField label='Difficulty' options={difficultyOptions}  />
 
             <br />
 
