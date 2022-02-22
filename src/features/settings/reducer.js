@@ -1,13 +1,6 @@
  import { createSlice } from "@reduxjs/toolkit";
 
 
-// const CHANGE_CATEGORY='CHANGE_CATEGORY',
-// CHANGE_DIFFICULTY='CHANGE_DIFFICULTY',
-// CHANGE_AMOUNT='CHANGE_AMOUNT',
-// CHANGE_TYPE='CHANGE_TYPE',
-// CHANGE_SCORE='CHANGE_SCORE';
-
-
 
 const settingSlicer=createSlice(
   { 
@@ -43,5 +36,5 @@ const settingSlicer=createSlice(
   }   
 )
 
-export const {selectCategory,selectDifficulty,selectType,changeScore,changeAmount,getQuestions} =settingSlicer.actions;
+export const {selectCategory,selectDifficulty,selectType,changeScore,changeAmount,getQuestions,updateScore} = settingSlicer.actions;
 export default settingSlicer.reducer;

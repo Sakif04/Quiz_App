@@ -1,17 +1,13 @@
-import { Container,Row ,Button} from "react-bootstrap";
+import { Container} from "react-bootstrap";
+import { CircularProgress } from "@mui/material";
+import Option from "./Option";
+export default function Options({options,correctOption,qNumber}){
 
-export default function Options({options}){
 
-const optionStyle={
-   width:'80rem',height:'2rem',backgroundColor:'rgb(40, 42, 42)',padding:'.5rem',border:'none',margin:'0.6rem 0rem',
-}
     return(<>
          <Container>
           {  (options)?
-           options.map((option,id)=> <Row key={id+1} >
-               <Button  style={optionStyle}>{option}</Button>
-            </Row>):""}
-            
+           options.map((option,id)=> <Option  key={id} option={option} correctOption={correctOption}/>):""}         
          </Container>
       </>
     )
