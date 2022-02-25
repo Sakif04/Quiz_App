@@ -10,8 +10,8 @@ import UseData from "../../hooks/useData";
 
 export default function Main(){   
     
-    const shuffle=()=>Math.random-0.5;
-    const {id}=useParams();
+        const shuffle=()=>Math.random()-0.5; 
+        const {id}=useParams();
 
     const score=useSelector(state=>state.setting.score);
     const {

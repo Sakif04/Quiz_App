@@ -1,46 +1,53 @@
-import { Row,Button } from "react-bootstrap"
-import {  useState } from "react";
+import { Row,Button } from "react-bootstrap";
+import {  useState  } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch,} from "react-redux";
 import { updateScore } from "../../../features/settings/reducer";
 
-export default function Option({option,correctOption}){
+
+export default function Option({option,clickedStatus,setClickStatus,isCorrect}){
     const dispatch=useDispatch();
-    const normalStyle={
-        width:'80rem',height:'2rem',backgroundColor:'rgb(40, 42, 42)',padding:'.5rem',border:'none',margin:'0.6rem 0rem'
+
+    const optionStyle={
+        width:'80rem',height:'2rem',backgroundColor:'rgb(40, 42, 42)',
+        padding:'.5rem',border:'none',margin:'0.6rem 0rem'
     }
     
-    const [optionStyle,setStyle]=useState(normalStyle);
+    
     const {id}=useParams();
     const [page,setPage]=useState(id);
     if (page!==id){
-        setStyle(normalStyle)
+        setClickStatus(false)        
         setPage(id);
     }
     
    
-    
-    const correctStyle={ width:'80rem',height:'2rem',backgroundColor:'rgb(30, 186, 13)',color:"#fff",padding:'.5rem',border:'none',margin:'0.6rem 0rem'
+    const correctStyle={
+        width:'80rem',height:'2rem',backgroundColor:'rgb(30, 206, 13)',color:"#fff",padding:'.5rem',border:'none',margin:'0.6rem 0rem'
     }
-    const incorrectStyle={ width:'80rem',height:'2rem',backgroundColor:'rgb(240, 42, 42)',color:"#fff",padding:'.5rem',border:'none',margin:'0.6rem 0rem'
-}
+    const incorrectStyle={ 
+        width:'80rem',height:'2rem',backgroundColor:'rgb(240, 0, 0)',color:"#fff",padding:'.5rem',border:'none',margin:'0.6rem 0rem'
+    }
+    let btnColor=isCorrect?correctStyle:incorrectStyle;
+    
+    
 
     const handleClick=(e)=>
     {  e.preventDefault();
+       if(clickedStatus===false){
+            setClickStatus(true);
+            if(isCorrect){
+                dispatch(updateScore(1));
+            }
+        }
        
-       if(option===correctOption){
-        dispatch(updateScore(1))
-        setStyle(correctStyle);
-       }
-       else{
-        setStyle(incorrectStyle);
-        dispatch(updateScore(-1))
-       }
     }
+  
  
     
-    return(<Row >
-    <Button onClick={handleClick} style={optionStyle} >{option}</Button>
+    return(
+    <Row >
+        <Button onClick={handleClick} style={clickedStatus?btnColor:optionStyle}>{option}</Button>
     </Row>)
 
 
