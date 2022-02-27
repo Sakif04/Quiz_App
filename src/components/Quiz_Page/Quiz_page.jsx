@@ -22,18 +22,19 @@ export default function Main(){
         questions
         }=useSelector((state)=>state.setting);
         const dispatch=useDispatch();
-        console.log(questions);
-        let apiUrl="api.php?amount="+questionAmount;
         
+        let apiUrl="api.php?amount="+questionAmount;
+    console.log(category,difficulty,);    
     if (category){
-            apiUrl.concat("&category="+category)
+            apiUrl+="&category="+category;
     }
     if (difficulty){
-            apiUrl.concat("&difficulty="+difficulty)
+            apiUrl+="&difficulty="+difficulty;
     }
     if (type){
-            apiUrl.concat("&type="+type)
+            apiUrl+="&type="+type
     }
+
     console.log(apiUrl);
         
     const {response}=UseData({url:apiUrl});

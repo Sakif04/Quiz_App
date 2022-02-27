@@ -21,7 +21,9 @@ export default function StartPage(){
         
     const [questionNumber,setQuestionNumber]=useState(10);
     const handleSubmit=(e)=>{
-        navigate("/q1")
+        
+        navigate("/q1");
+
     }
     const handleInput=(e)=>{
         let target=e.target.value;
@@ -34,7 +36,7 @@ export default function StartPage(){
        <Container className="col-sm-10 bg-secondary purple"> 
             <h2 className="form-signin-heading text-center orange bg-secondary">Quiz APP </h2>
             <label htmlFor="trivia_amount orange" >Number of Questions:</label>
-            <input type="number" name="trivia_amount" id="trivia_amount" className="form-control text-center" min="1" max="20" value={questionNumber} onChange={handleInput} />
+            <input type="number" name="trivia_amount" id="trivia_amount" className="form-control text-center" min="1" max="50" value={questionNumber} onChange={handleInput} />
             <br/>
             <Category />
     
