@@ -43,13 +43,11 @@ export default function Option({option,clickedStatus,setClickStatus,isCorrect}){
        
     }
   
- 
     
     return(
     <Row >
-        <Button onClick={handleClick} style={clickedStatus?btnColor:optionStyle}>{option}</Button>
+        <Button onClick={handleClick} style={clickedStatus?btnColor:optionStyle}>{option}
+        </Button>
     </Row>)
-
-
 
 }
