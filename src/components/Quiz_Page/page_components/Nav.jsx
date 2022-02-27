@@ -1,11 +1,11 @@
 import {Container,ButtonGroup,Card,Button} from "react-bootstrap";
 import { useNavigate,useParams } from "react-router-dom";
  import { updateScore } from "../../../features/settings/reducer";
-import {useSelector,useDispatch} from "react-redux";
-export default function Nav(){
+import {useDispatch} from "react-redux";
+export default function Nav({amount}){
     const {id}=useParams();
     const navStyle={padding:'1rem',color:'#fff',fontSize:'1rem'};
-    const questionNum=useSelector((state)=>state.setting.questionAmount);
+    
     const dispatch=useDispatch();
     const navigate=useNavigate();
     const cancelQuiz=(e)=>{
@@ -15,11 +15,13 @@ export default function Nav(){
     }
     const moveToNextPage=(e)=>{
         e.preventDefault();
-        if (id>=questionNum){
-            navigate("/r");
+
+        if (parseInt(id)<amount){
+            navigate("/q"+(parseInt(id)+1));
         }
         else{
-            navigate("/q"+(parseInt(id)+1))
+            navigate("/r");
+
         }
     }
     return(

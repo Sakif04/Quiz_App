@@ -22,7 +22,7 @@ export default function Main(){
         questions
         }=useSelector((state)=>state.setting);
         const dispatch=useDispatch();
-
+        console.log(questions);
         let apiUrl="api.php?amount="+questionAmount;
         
     if (category){
@@ -61,7 +61,7 @@ export default function Main(){
            <Container bg="secondary"><h2>{score}</h2></Container>
             <Question question={questionStr}/>
             <Options options={answerOptions} correctOption={correctAnswer}/>  
-            <Nav/>     
+            <Nav amount={questionAmount}/>     
     </Container>)
 
 }

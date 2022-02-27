@@ -1,6 +1,5 @@
 import { Row,Button } from "react-bootstrap";
-import {  useState  } from "react";
-import { useParams } from "react-router-dom";
+
 import { useDispatch,} from "react-redux";
 import { updateScore } from "../../../features/settings/reducer";
 
@@ -14,13 +13,7 @@ export default function Option({option,clickedStatus,setClickStatus,isCorrect}){
     }
     
     
-    const {id}=useParams();
-    const [page,setPage]=useState(id);
-    if (page!==id){
-        setClickStatus(false)        
-        setPage(id);
-    }
-    
+  
    
     const correctStyle={
         width:'80rem',height:'2rem',backgroundColor:'rgb(30, 206, 13)',color:"#fff",padding:'.5rem',border:'none',margin:'0.6rem 0rem'

@@ -1,12 +1,10 @@
 import {selectCategory,selectDifficulty,selectType} from "../../../features/settings/reducer";
 import { useState } from "react";
-import { useSelector,useDispatch} from "react-redux";
+import { useDispatch} from "react-redux";
 
 export default function SelectField({label,options}){
 
     const dispatch=useDispatch();
-    const state=useSelector((s)=>s.setting);
-    console.log(state);
     
     
     const [selected,setSelect]=useState(options[0]);
@@ -29,7 +27,6 @@ export default function SelectField({label,options}){
             default:
                 return
         }
-        console.log(state);
     }
     
     return(
