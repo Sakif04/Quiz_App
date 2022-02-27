@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Used React-redux and redux toolkit to manage state
 - Fetched API from [Open Trivia Database](https://opentdb.com/)     ![](https://opentdb.com/images/logo-banner.png)
 - Used React-Router for routing to different pages with different questions
-
+- Used react-chartjs-2 for showing a visualization of the result of Quiz
 
 <h3 align="center">Best-README-Template</h3>
 
