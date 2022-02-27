@@ -10,7 +10,8 @@ export default function Results(){
     const navigate=useNavigate();
     const dispatch=useDispatch();
     const questionAmount=useSelector(state=>state.setting.questionAmount);
-    const incorrect=questionAmount-score;
+    const incorrect=parseInt(questionAmount)-parseInt(score);
+    console.log(incorrect);
     const restart=(e)=>{
         e.preventDefault();
         dispatch(updateScore(-score));
@@ -28,9 +29,9 @@ export default function Results(){
                     labels:["correct","incorrect"],
                     datasets:[
                         {
-                          label: 'Succes Diagram',
+                          label: 'Succes Bar Chart',
                           data: [score,incorrect],
-                          backgroundColor: ["rgba(5, 200, 0, 0.9)","rgba(255, 0, 0, 0.9)"]
+                          backgroundColor: ["rgba(5, 200,100, 0.5)","rgba(255, 50, 0, 0.6)"]
                             
                         }]
                 }} 

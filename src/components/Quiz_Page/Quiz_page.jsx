@@ -24,7 +24,6 @@ export default function Main(){
         const dispatch=useDispatch();
         
         let apiUrl="api.php?amount="+questionAmount;
-    console.log(category,difficulty,);    
     if (category){
             apiUrl+="&category="+category;
     }
