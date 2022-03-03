@@ -37,7 +37,7 @@ export default function Main(){
 
     console.log(apiUrl);
         
-    const {response,loading}=UseData({url:apiUrl});
+    const {response}=UseData({url:apiUrl});
   
     if(response){
         dispatch(getQuestions(response.results))
