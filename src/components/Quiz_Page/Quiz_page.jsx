@@ -41,8 +41,6 @@ export default function Main(){
   
     if(response){
         dispatch(getQuestions(response.results))
-    }else{
-            return <CircularProgress />
     }
     let tempQuestion=null;
 
@@ -60,12 +58,12 @@ export default function Main(){
     const main_style={backgroundColor:'rgb(108, 117, 125)',color:'#F9E4D4'}
     
     
-    return(
+    return(response?
     <Container className="col-sm-10" style={main_style}>
            <Container bg="secondary"><h2>{score}</h2></Container>
             <Question question={questionStr}/>
             <Options options={answerOptions} correctOption={correctAnswer}/>  
             <Nav amount={questionAmount}/>     
-    </Container>)
+    </Container>:<CircularProgress />)
 
 }
