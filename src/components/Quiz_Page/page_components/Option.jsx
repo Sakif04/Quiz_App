@@ -1,5 +1,5 @@
 import { Row,Button } from "react-bootstrap";
-
+import { Markup } from 'interweave';
 import { useDispatch,} from "react-redux";
 import { updateScore } from "../../../features/settings/reducer";
 
@@ -39,7 +39,7 @@ export default function Option({option,clickedStatus,setClickStatus,isCorrect}){
     
     return(
     <Row >
-        <Button onClick={handleClick} style={clickedStatus?btnColor:optionStyle}>{option}
+        <Button onClick={handleClick} style={clickedStatus?btnColor:optionStyle}><Markup content={option}/>
         </Button>
     </Row>)
 

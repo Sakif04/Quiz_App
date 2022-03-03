@@ -4,6 +4,8 @@ import { updateScore } from "../../features/settings/reducer";
 import { useNavigate } from "react-router-dom";
 import {useDispatch,useSelector} from "react-redux";
 import { Bar } from "react-chartjs-2";
+
+// Register all chart elements
 Chart.register(...registerables);
 export default function Results(){
     const score=useSelector((state)=>state.setting.score)

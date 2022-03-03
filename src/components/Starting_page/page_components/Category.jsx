@@ -1,5 +1,6 @@
 
 import SelectField from "./SelectField";
+import { CircularProgress } from "@mui/material";
 import UseData from "../../../hooks/useData";
 export default function Category(options,label){
     
@@ -8,7 +9,7 @@ export default function Category(options,label){
     return(
     <>
     { response?
-        <SelectField label='Select Category' options={response.trivia_categories}/>:""}
+        <SelectField label='Select Category' options={response.trivia_categories}/>: <CircularProgress />}
     </>
     
 )

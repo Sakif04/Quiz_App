@@ -1,4 +1,4 @@
-import Options from "./page_components/Options"
+import Options from "./page_components/Options";
 import Question from "./page_components/Question";
 import Nav from "./page_components/Nav";
 import { useParams } from "react-router-dom";
@@ -7,14 +7,15 @@ import {getQuestions} from "../../features/settings/reducer";
 import { Container} from 'react-bootstrap';
 import { useSelector,useDispatch } from "react-redux";
 import UseData from "../../hooks/useData";
+import { CircularProgress } from "@mui/material";
 
 export default function Main(){   
     
         const shuffle=()=>Math.random()-0.5; 
         const {id}=useParams();
 
-    const score=useSelector(state=>state.setting.score);
-    const {
+        const score=useSelector(state=>state.setting.score);
+        const {
         category,
         difficulty,
         type,
@@ -36,9 +37,12 @@ export default function Main(){
 
     console.log(apiUrl);
         
-    const {response}=UseData({url:apiUrl});
+    const {response,loading}=UseData({url:apiUrl});
+  
     if(response){
         dispatch(getQuestions(response.results))
+    }else{
+            return <CircularProgress />
     }
     let tempQuestion=null;
 
