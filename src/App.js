@@ -7,11 +7,11 @@ import './styles/App.css';
 import { useSelector } from 'react-redux';
 import {Routes,BrowserRouter as Router,Route,Link} from 'react-router-dom';
 import Results from './components/Results_Page/Results';
+
+
 function App() {
 
-
   const score=useSelector((state)=>state.setting.score);
-  console.log(score);
   return (
   <div className="App">
  
