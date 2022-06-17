@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
  
-## Preview Link [Quiz App](https://github.com/Sakif04/Sakif04)
+## Preview Link [Quiz App](https://sakifsquizapp.netlify.app/)
 ## Features
 - Used react-bootstrap as dependancy fro styling.
 - Used React-redux and redux toolkit to manage state.
