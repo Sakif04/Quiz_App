@@ -1,8 +1,9 @@
+import { useState ,memo} from "react";
 import {Container} from "react-bootstrap";
 import Option from "./Option";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
-export default function Options({options,correctOption}){
+
+ function Options({options,correctOption}){
   const [clickedStatus,setClickStatus]=useState(false);
   const {id}=useParams();
   const [page,setPage]=useState(id);
@@ -25,3 +26,5 @@ export default function Options({options,correctOption}){
       </>
     )
 }
+
+export default memo(Options);
