@@ -11,7 +11,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Used material UI to show Circular progress when needed.
 
 
-<h3 align="center">Best-README-Template</h3>
+
 
 ## Available Scripts
 
